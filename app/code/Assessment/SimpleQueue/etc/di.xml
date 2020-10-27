@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="SimpleQueue" xsi:type="object">Assessment\SimpleQueue\Console\Command\SimpleQueue</item>
+			</argument>
+		</arguments>
+	</type>
+
+	<virtualType name="Assessment\SimpleQueue\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+		<arguments>
+			<argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+			<argument name="fileName" xsi:type="string">/var/log/consumer.log</argument>
+		</arguments>
+	</virtualType>
+
+	<virtualType name="Assessment\SimpleQueue\Logger\Logger" type="Magento\Framework\Logger\Monolog">
+		<arguments>
+			<argument name="name" xsi:type="string">SimpleQueue Logger</argument>
+			<argument name="handlers" xsi:type="array">
+				<item name="system" xsi:type="object">Assessment\SimpleQueue\Logger\Handler</item>
+			</argument>
+		</arguments>
+	</virtualType>
+
+	<type name="Assessment\SimpleQueue\Model\Product\Queue\Consumer">
+		<arguments>
+			<argument name="logger" xsi:type="object">Assessment\SimpleQueue\Logger\Logger</argument>
+		</arguments>
+	</type>
+</config>

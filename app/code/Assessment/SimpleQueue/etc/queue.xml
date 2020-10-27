@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <broker topic="simple.queue.log.product.sku" exchange="magento-db" type="db">
+        <queue name="simple_queue_log_product_sku"
+               consumer="SimpleQueueLogProductSku"
+               consumerInstance="Magento\Framework\MessageQueue\Consumer"
+               handler="Assessment\SimpleQueue\Model\Product\Queue\Consumer::process"/>
+    </broker>
+</config>

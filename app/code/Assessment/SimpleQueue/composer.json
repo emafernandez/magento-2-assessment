@@ -1,0 +1,19 @@
+{
+    "name": "assessment/module-simplequeue",
+    "description": "https://github.com/dambrogia/magento-2-assessment",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~7.1.0|~7.2|~7.3",
+        "magento/framework": "102.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Assessment\\SimpleQueue\\": ""
+        }
+    }
+}

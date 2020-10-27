@@ -49,4 +49,5 @@ What you submit should be _very_ straight forward to test and confirm that it wo
 On the other hand, this is only an assessment and this code will never reach a production environment. Your time is valuable and very much appreciated. If you can cut a corner and save upwards of 20-30 minutes, write a comment on why you did what you did and how it could be better/more in-depth if you had more time.
 ___
 ### Instructions:
-Add step by step instructions here on how to mindlessly walk through your module.
+
+Instructions on how to test the module can be found in the [Module's readme](app/code/Assessment/SimpleQueue/README.md) file.
